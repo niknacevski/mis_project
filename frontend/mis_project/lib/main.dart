@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mis_project/pages/books-page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -116,9 +117,14 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BooksPage()),
+          );
+        },
+        tooltip: 'See books',
+        child: const Icon(Icons.list),
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }

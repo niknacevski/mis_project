@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mis_project/pages/books-page.dart';
 
 void main() {
   runApp(const BookApp());
@@ -76,6 +77,16 @@ class _LandingPageState extends State<LandingPage> {
           }
         },
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => BooksPage()),
+          );
+        },
+        tooltip: 'See books',
+        child: const Icon(Icons.list),
+      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

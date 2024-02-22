@@ -7,6 +7,7 @@ Welcome to the BookStore Mobile App, a cross-platform application developed usin
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
 - [License](#license)
+- [Developers](#developers)
 
 ## Features
 
@@ -52,3 +53,9 @@ Before you start, make sure you have the following installed:
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute it as needed.
+
+## Developers
+
+- Nikola Nachevski 201052
+- Nikola Lazarevski 193153
+

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mis_project/pages/books-page.dart';
+import 'package:mis_project/pages/login-page.dart';
 
 void main() {
   runApp(const BookApp());
@@ -41,52 +42,8 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Book App'),
-      ),
-      body: FutureBuilder(
-        future: _fetchBooks(),
-        builder: (context, AsyncSnapshot<List<Book>> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            // Loading state
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          } else if (snapshot.hasError) {
-            // Error state
-            return Center(
-              child: Text('Error fetching data'),
-            );
-          } else if (snapshot.data == null || snapshot.data!.isEmpty) {
-            // Empty state
-            return Center(
-              child: Text('No books available'),
-            );
-          } else {
-            // Data loaded successfully
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                Book book = snapshot.data![index];
-                return ListTile(
-                  title: Text(book.title),
-                  subtitle: Text('By ${book.author}'),
-                );
-              },
-            );
-          }
-        },
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => BooksPage()),
-          );
-        },
-        tooltip: 'See books',
-        child: const Icon(Icons.list),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      appBar: AppBar(title: Text('Book App')),
+      body: LoginPage()
     );
   }
 }
